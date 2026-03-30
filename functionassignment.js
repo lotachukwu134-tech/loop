@@ -18,7 +18,34 @@ scores();            //function expression
 
 //number 3
 console.log("Assignment number 3")
+//closures
+const makeScoreTracker =() => {
+    let score= 0
+     
+    function addScore(n){
+        score=score+n
+   // num=score+n
+    
+    }
+    function getTotal(){
+//let total=num
+return score;
+    }
+    function reset(){
+        score=0
+    }
+    return {
+        addScore, getTotal, reset
+    }
+}
+ let tracker = makeScoreTracker()
 
+ tracker.addScore(10);
+ tracker.addScore(5);
+
+ console.log(tracker.getTotal())
+
+ //tracker.reset();
 
 
 //number 4
